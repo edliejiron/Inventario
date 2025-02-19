@@ -1,0 +1,22 @@
+{% extends "admin/base.html" %}
+{% load static %}
+
+{% block userlinks %}
+    {% include 'admin/navbar.html' %}
+    {{ block.super }}
+{% endblock %}
+
+
+{% block javascripts %}
+{{ block.super }}
+    <script type="text/javascript" src="{% static 'admin/ajax/js/grp.jQuery.token.js' %}"></script>
+    <script type="text/javascript" src="{% static 'admin/spinner/js/spinner.js' %}"></script>
+{% endblock %}
+
+
+{% block footer %}
+    <div id="grp-spinner"
+         style="width: 100%; left: 0; top: 30%; text-align: center; position: fixed; z-index: 999999; display: none;">
+        <img src="{% static 'admin/spinner/img/spinner.gif' %}" style="width: 200px" alt="cargando">
+    </div>
+{% endblock %}
