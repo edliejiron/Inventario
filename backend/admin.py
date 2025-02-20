@@ -108,7 +108,7 @@ class CompraAdmin(admin.ModelAdmin):
                 for producto_id, delta in stock_updates.items():
                     if delta != 0:
                         Producto.objects.filter(id=producto_id).update(
-                            stock=F("stock") + delta
+                            stock=F("stock") +  delta
                         )
 
                 # Guardar instancias y eliminar objetos marcados
